@@ -1,5 +1,6 @@
 
-def welcome(username):
+def welcome():
+    username = input("Please enter your name: ")
     print(f'Hi {username} and welcome to the World of Games: The Epic Journey!')
 
 
