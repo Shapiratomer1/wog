@@ -3,11 +3,11 @@ def welcome():
     print(f'Hi {username} and welcome to the World of Games: The Epic Journey!')
 
 
-def validate_user_input(user_choice: int, valid_inputs: range) -> bool:
-    if user_choice not in valid_inputs:
-        print(f'Please select a valid input using numbers {valid_inputs[0]}-{valid_inputs[-1]}')
-        return False
-    return True
+def validate_user_input(user_choice, valid_inputs: range) -> bool:
+    if user_choice.isdigit() and int(user_choice) in valid_inputs:
+        return True
+    print(f'Please select a valid input using numbers {valid_inputs[0]}-{valid_inputs[-1]}')
+    return False
 
 
 def prompt_game_choice() -> int:
@@ -22,8 +22,7 @@ def prompt_game_choice() -> int:
         if user_game_choice == 'q':
             print("Exiting the game. Goodbye!")
             return -1  # Return a special value to indicate exit
-
-        if validate_user_input(int(user_game_choice), range(1, 4)):
+        if validate_user_input(user_game_choice, range(1, 4)):
             return int(user_game_choice)
 
 
@@ -33,7 +32,7 @@ def prompt_difficulty_choice() -> int:
         if user_difficulty_choice == 'q':
             print("Exiting the game. Goodbye!")
             return -1
-        if validate_user_input(int(user_difficulty_choice), range(1, 6)):
+        if validate_user_input(user_difficulty_choice, range(1, 6)):
             return int(user_difficulty_choice)
 
 
