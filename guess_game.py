@@ -1,8 +1,7 @@
-from random import Random
-
+from random import randint
 
 def generate_number(difficulty):
-    secret_number = Random.random(difficulty)
+    secret_number = randint(0, difficulty)
     return secret_number
 
 

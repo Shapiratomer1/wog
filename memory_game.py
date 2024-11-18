@@ -1,7 +1,7 @@
 import random
 import time
 import os
-
+from utils import clear_screen
 
 def generate_sequence(difficulty):
     return [random.randint(1, 101) for _ in range(difficulty)]
@@ -12,10 +12,6 @@ def display_sequence(sequence, visible_duration=0.7):
     print(sequence)
     time.sleep(visible_duration)
     clear_screen()
-
-
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear') # win/linux
 
 
 def get_list_from_user(difficulty):
@@ -45,3 +41,4 @@ if __name__ == "__main__":
         print("Congratulations! You won.")
     else:
         print("You loose!")
+

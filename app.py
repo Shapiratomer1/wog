@@ -1,3 +1,9 @@
+from memory_game import play as memory_game_play
+from guess_game import play as guess_game_play
+from currency_roulette_game import play as currency_roulette_play
+from score import add_score
+
+
 def welcome():
     username = input("Please enter your name: ")
     print(f'Hi {username} and welcome to the World of Games: The Epic Journey!')
@@ -43,4 +49,17 @@ def start_play():
     difficulty_choice = prompt_difficulty_choice()
     if difficulty_choice == -1:
         return
-    print(f"You have chosen game {game_choice} with difficulty level {difficulty_choice}.")
+
+    game_functions = {
+        1: memory_game_play,
+        2: guess_game_play,
+        3: currency_roulette_play
+    }
+    selected_game = game_functions.get(game_choice)
+    if selected_game:
+        print(f"You have chosen game {game_choice} with difficulty level {difficulty_choice}.")
+        has_won = selected_game(difficulty_choice)
+        if has_won:
+            add_score(difficulty_choice)
+    else:
+        print("Error: Invalid game choice.")
