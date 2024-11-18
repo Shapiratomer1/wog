@@ -60,6 +60,9 @@ def start_play():
         print(f"You have chosen game {game_choice} with difficulty level {difficulty_choice}.")
         has_won = selected_game(difficulty_choice)
         if has_won:
+            print('You win!')
             add_score(difficulty_choice)
+        else:
+            print('You lose!')
     else:
         print("Error: Invalid game choice.")

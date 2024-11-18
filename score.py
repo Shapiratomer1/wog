@@ -14,6 +14,6 @@ def add_score(difficulty):
         new_score = current_score + POINTS_OF_WINNING(difficulty)
         with open(SCORES_FILE_NAME, "w") as file:
             file.write(str(new_score))
-        print(f"Score updated successfully. New score: {new_score}")
+        print(f"Score updated successfully: +{POINTS_OF_WINNING(difficulty)} points. New score: {new_score}")
     except Exception as e:
         print(f"Error: Unable to update the score. {e}")
