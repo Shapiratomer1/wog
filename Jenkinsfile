@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                powershell 'docker run -d -p 8777:8777 --name flask-scores-app -v $(pwd)/Scores.txt:/Scores.txt flask-scores-app'
+                powershell 'docker run -d -p 8777:8777 --name flask-scores-app -v $(pwd)/scores.txt:/scores.txt flask-scores-app'
             }
         }
         stage('Test') {
