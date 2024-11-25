@@ -17,7 +17,7 @@ def test_scores_service(url):
         driver.quit()
 
 def main_function():
-    url = "http://localhost:8777"
+    url = "http://flask-app:8777"
     test_result = test_scores_service(url)
     if test_result:
         print("Test passed!")
